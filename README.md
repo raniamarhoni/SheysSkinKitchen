@@ -209,15 +209,17 @@ My aim for this project is to build a website where all the user stories are met
 3.	I went into .gitignore if one hasn’t been created add a file called ‘.gitignore’
 4.	In .gitignore I added these 3 to the list.
     * 	‘*sqlite’ to ignore our development database file. 
-    *	‘*.pyc’ & ‘__ pycache __’ to ignore compiled python code which we do not need in version control.
-5.	Then I typed ‘python3 manage. py runserver’ to see if it had installed successfully in which it told me when i exposed port 8000.
+    *	‘*.pyc’ & ‘__pycache __’ to ignore compiled python code which we do not need in version control.
+5.	Then I typed ‘python3 manage.py runserver’ to see if it had installed successfully in which it told me when i exposed port 8000.
 6.	I stopped the server by clicking Ctrl & C. 
-7.	Then I created a superuser in Django by writing ‘python3 manage. py createsuperuser’ and followed the instructions by entering a username, email, and password. 
+7.	Then I created a superuser in Django by writing ‘python3 manage.py createsuperuser’ and followed the instructions by entering a username, email, and password. 
 
 ## Credits
 
 ### Content
 
 ### Media
+
+Photo on the homepage of hands with cream was taking from pexel see [link to photo](https://www.pexels.com/photo/person-applying-hand-cream-3762875/)
 
 ### Acknowledgements
