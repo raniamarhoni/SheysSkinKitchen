@@ -72,15 +72,15 @@ I wanted a simple colour scheme, so I went 3 colours white (#FFFFFF), black (#00
  
 Black and white was chosen to make it simple and the orange was chosen as it is the exact match of the photo on the homepage. 
  
-Add photo of colours with codes. 
- 
+![Colours](https://github.com/raniamarhoni/SheysSkinKitchen/blob/master/design/readme%20images/Colours.png)
+
 #### Typography
  
 I picked 2 fonts to be used one for headers and one for general text. 
  
 The 2 fonts are Amatic SC for headers and Abel for general text. 
  
-Photo of the 2 fonts 
+![Fonts](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/readme%20images/Fonts.png)
  
 #### Images
  
@@ -92,26 +92,26 @@ It is of hands with cream on them representing what the site sells Skin care e.g
  
 Once all the pages have been chosen and a design accepted, I then went to design each page on Adobe XD see below all the wireframes for each page.
  
-* [Home Wireframe]()
-* [Sign Up Wireframe]()
-* [Sign in Wireframe]()
-* [Profile Wireframe]()
-* [Review Wireframe]()
-* [Recover Password Wireframe]()
-* [Products search Wireframe]()
-* [Product Wireframe]()
-* [Shopping Bag Wireframe]()
-* [Checkout Wireframe]()
-* [Order Confirmation Wireframe]()
-* [Contact Us Wireframe]()
-* [Add a Product Wireframe]()
-* [Edit a Product Wireframe]()
+* [Home Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Home.pdf)
+* [Sign Up Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Sign%20Up.pdf)
+* [Sign in Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Sign%20In.pdf)
+* [Profile Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Profile.pdf)
+* [Review Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Review.pdf)
+* [Recover Password Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Recover%20Password.pdf)
+* [Products search Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Products.pdf)
+* [Product Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20A%20Product.pdf)
+* [Shopping Bag Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Shopping%20Bag.pdf)
+* [Checkout Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Checkout.pdf)
+* [Order Confirmation Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Order%20Confirmation.pdf)
+* [Contact Us Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Contact%20Us.pdf)
+* [Add a Product Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Add%20a%20Product.pdf)
+* [Edit a Product Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Edit%20a%20Product.pdf)
 
 
 While designing I also created 2 wireframes which will no longer be created
 
-* [Payment Details Wireframe]()
-* [Add a Card Wireframe]()
+* [Payment Details Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Payment%20Details.pdf)
+* [Add a Card Wireframe](https://github.com/raniamarhoni/SheysSkinKitchen/blob/f193cf736e6e5acd551e30563e54f2d96578d157/design/wireframes/SSK%20-%20Add%20a%20Card.pdf)
 
 
 ### Structure 
