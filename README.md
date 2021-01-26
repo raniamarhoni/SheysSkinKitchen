@@ -219,6 +219,10 @@ As I created the superuser in the terminal I can check it works my adding ‘/ad
 8.	I logged in and if it says /success at the end of the page address it passed the second test (2nd test passed)
 9.	I went back into setting.py and changed the code to ‘LOGIN_REDIRECT_IRL = “/”’. 
 
+### Testing new templates or pages
+
+Whenever creating a new page or template I would always check it works before writing any code by just putting a h1 header of ‘It works’ with bootstrap CSS on it of text-success where the text will come up green to make sure it works as the links are in the base template. 
+
 ## Deployment
 
 1.	As I was going to use Gitpod I used this [template](https://github.com/Code-Institute-Org/gitpod-full-template) to open a GitHub repository.
