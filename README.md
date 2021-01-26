@@ -197,7 +197,27 @@ My aim for this project is to build a website where all the user stories are met
 ### Features Left to Implement
 
 ## Technologies Used
+
 ## Testing
+
+### Django-allauth tests
+I used django-allauth as it has all the features I need for the site and it is completely customizable and will allow me to add more functionality later and as it is an open source, so it is backed by millions of developers who keep it secure and up to date. 
+
+While setting up allauth I ran some tests to make sure it works. 
+
+**Checking I can log in and out. (1 test)**
+As I created the superuser in the terminal I can check it works my adding ‘/admin’ to the page address when I open the project and see if I am able to log in using the superuser login I created in the terminal. 
+
+**Verifying email tests (2 tests)**
+1.	I went to setting.py and under the email set up in ‘LOGIN_REDIRECT_IRL = “/”’ I changed it to ‘LOGIN_REDIRECT_IRL = “/Success”’
+2.	I opened the project and put ‘accounts/login’ at the end of the page address. 
+3.	Signed in and if it says I must verify my email then it passed the first test(1st test checked)
+4.	Then I went back and put ‘admin’ at the end of the page address making sure ‘accounts/login’ has been deleted from the page address.
+5.	I Logged in and click email addresses. 
+6.	Then I clicked on the email I put the superuser as and ticked verify and primary and saved. 
+7.	I went back to ‘accounts/login’ at the end of the page address making sure ‘admin’ was gone and logged back in again.
+8.	I logged in and if it says /success at the end of the page address it passed the second test (2nd test passed)
+9.	I went back into setting.py and changed the code to ‘LOGIN_REDIRECT_IRL = “/”’. 
 
 ## Deployment
 
