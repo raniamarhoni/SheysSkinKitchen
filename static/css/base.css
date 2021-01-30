@@ -1,0 +1,93 @@
+/*----------HTML & BODY----------*/
+
+html {
+    height: 100%;
+}
+
+body {
+    background: white;
+    color: black;
+    font-family: 'Abel', sans-serif;
+}
+
+/*----------COMMON CSS----------*/
+
+.center {
+    text-align:center;
+    width: fit-content;
+    margin: auto;
+}
+
+.extra-button-margin {
+    margin: 20px auto;
+}
+
+/*----------HOME SECTION----------*/
+
+.home-section {
+    background: url('/media/home.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.home-logo {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.home-description {
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.shop-now-button {
+    background: white;
+    color: #E19B74;
+    padding: 10px 30px;
+    border: #E19B74 solid 3px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus {
+    background: #E19B74;
+    color: white;
+    border: white solid 3px;
+
+}
+
+@media only screen and (min-width: 768px) {
+   .home-logo {
+       font-size: 80px; 
+    }
+
+    .home-description {
+        font-size: 20px;
+    }
+
+    .shop-now-button {
+       font-size: 25px; 
+    }
+}
+
+@media only screen and (min-width: 992px) {
+   .home-logo {
+       font-size: 100px; 
+    }
+
+    .home-description {
+        font-size: 30px;
+    }
+
+    .shop-now-button {
+       font-size: 35px; 
+    }
+}
