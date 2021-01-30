@@ -141,3 +141,14 @@ body {
 footer {
     background: #E19B74;
 }
+
+/* -------------------------------- Media Queries */
+.header-container {
+    margin-top: 122px;
+}
+
+@media (min-width: 992px) {
+    .header-container {
+        padding-top: 0px;
+    }
+}
