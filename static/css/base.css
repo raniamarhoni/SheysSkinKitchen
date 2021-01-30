@@ -51,6 +51,10 @@ body {
     height: 100vh;
 }
 
+.top-cover {
+    background: rgba(255, 255, 255, 0.3)
+}
+
 .home-logo {
     text-align: center;
     font-size: 50px;
@@ -58,7 +62,6 @@ body {
 }
 
 .home-description {
-    background: white;
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 16px;
