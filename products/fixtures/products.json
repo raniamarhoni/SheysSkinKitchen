@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "products.product",
         "fields": {
-            "sku": "pp5001340155",
+            "sku": "pp1",
             "name": "Body Butter 1",
             "description": "product description added here",
             "ingredients": "ingredients added here",
@@ -15,5 +15,125 @@
             "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-1.jpeg",
             "image": "body-butter-1.jpeg"
         }
+    },
+        {
+            "pk": 1,
+            "model": "products.product",
+            "fields": {
+            "sku": "pp2",
+            "name": "Body Butter 2",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-2.jpeg",
+            "image": "body-butter-2.jpeg"
+        }
+    },
+        {
+            "pk": 1,
+            "model": "products.product",
+            "fields": {
+            "sku": "pp3",
+            "name": "Body Butter 3",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-3.jpeg",
+            "image": "body-butter-3.jpeg"
+        }
+    },
+        {
+            "pk": 1,
+            "model": "products.product",
+            "fields": {
+            "sku": "pp4",
+            "name": "Body Butter 4",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-4.jpeg",
+            "image": "body-butter-4.jpeg"
+        }
+    },
+        {
+            "pk": 1,
+            "model": "products.product",
+            "fields": {
+            "sku": "pp5",
+            "name": "Body Butter 5",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-5.jpeg",
+            "image": "body-butter-5.jpeg"
+        }
+    },
+        {
+            "pk": 1,
+            "model": "products.product",
+            "fields": {
+            "sku": "pp6",
+            "name": "Body Butter 6",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-6.jpeg",
+            "image": "body-butter-6.jpeg"
+        }
+    },
+        {
+            "pk": 1,
+            "model": "products.product",
+            "fields": {
+            "sku": "pp7",
+            "name": "Body Butter 7",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-7.jpeg",
+            "image": "body-butter-7.jpeg"
+        }
+    },
+        {
+            "pk": 1,
+            "model": "products.product",
+            "fields": {
+            "sku": "pp8",
+            "name": "Body Butter 8",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-8.jpeg",
+            "image": "body-butter-8.jpeg"
+        }
     }
-]
+
+] 
