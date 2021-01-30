@@ -1,0 +1,18 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "body_butters",
+            "friendly_name": "Body Butters"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "soaps",
+            "friendly_name": "Soaps"
+        }
+    }
+]

@@ -1,0 +1,19 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001340155",
+            "name": "Body Butter 1",
+            "description": "product description added here",
+            "ingredients": "ingredients added here",
+            "size": "125ml",
+            "price": 10,
+            "stock": 20,
+            "rating": 5, 
+            "category": 1,
+            "image_url": "https://github.com/raniamarhoni/SheysSkinKitchen/blob/1f019d34a66fa47b75e8ac1d812df25377282923/media/body-butter-1.jpeg",
+            "image": "body-butter-1.jpeg"
+        }
+    }
+]
