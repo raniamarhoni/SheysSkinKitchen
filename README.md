@@ -223,6 +223,17 @@ As I created the superuser in the terminal I can check it works my adding ‘/ad
 
 Whenever creating a new page or template I would always check it works before writing any code by just putting a h1 header of ‘It works’ with bootstrap CSS on it of text-success where the text will come up green to make sure it works as the links are in the base template. 
 
+### Responsive Design testing 
+To check the code works on all screens. I used the inspect section of google chrome. Where I can change the screen size to see if the design will work on all screens. 
+
+To go on the inspect section on google chrome I right clicked on the website and clicked on ‘Inspect’ then on the top left it then gives options to change the screen size. 
+
+#### Bugs found in responsive design 
+
+**Banner not on tablet or phone screens**
+
+While testing the responsive design I found that the banner does not show on tablet or phone screens as it was behind the nav therefore I added padding to bring it down and made sure no padding was there when on large screens.  
+
 ## Deployment
 
 1.	As I was going to use Gitpod I used this [template](https://github.com/Code-Institute-Org/gitpod-full-template) to open a GitHub repository.
