@@ -1,0 +1,38 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+                Home
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Shop
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="" class="dropdown-item">All Products</a>
+                <a href="" class="dropdown-item ">Body Butters</a>
+                <a href="" class="dropdown-item ">Creams</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="account-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Account
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="account-link">
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                    <a href="" class="dropdown-item">Product Management</a>
+                {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="" class="dropdown-item">Logout</a>
+            {% else %}
+                <a href="" class="dropdown-item">Register</a>
+                <a href="" class="dropdown-item">Login</a>
+            {% endif %}
+            </div>
+        </li>
+
+    </ul>
+</div>

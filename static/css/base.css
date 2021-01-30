@@ -22,6 +22,14 @@ body {
     margin: 20px auto;
 }
 
+.header-font {
+    font-family: 'Amatic SC', cursive;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
 /*----------HOME SECTION----------*/
 
 .home-section {
@@ -31,12 +39,10 @@ body {
 }
 
 .home-logo {
-    font-family: 'Amatic SC', cursive;
     text-align: center;
     font-size: 50px;
     font-weight: bold;
 }
-
 
 .home-description {
     background: white;
@@ -90,4 +96,22 @@ body {
     .shop-now-button {
        font-size: 35px; 
     }
+}
+
+/*---------- HEADER, NAV & BANNER----------*/
+
+.nav-logo {
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.banner{
+    background: black;
+    color: white;
+    padding: 5px;
 }
