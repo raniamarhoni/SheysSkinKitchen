@@ -258,3 +258,5 @@ While testing the responsive design I found that the banner does not show on tab
 Photo on the homepage of hands with cream was taking from pexel see [link to photo](https://www.pexels.com/photo/person-applying-hand-cream-3762875/)
 
 ### Acknowledgements
+
+A lot of inspiration was taken from the site see the [github page](https://github.com/ckz8780/boutique_ado_v1)
