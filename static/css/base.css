@@ -126,6 +126,10 @@ body {
     color: black;
 }
 
+#delivery-banner {
+    padding-top: 80px;
+}
+
 .banner{
     background: black;
     color: white;
