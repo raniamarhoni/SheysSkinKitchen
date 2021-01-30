@@ -22,12 +22,25 @@ body {
     margin: 20px auto;
 }
 
+.border-black {
+    border: 1px solid black !important;
+}
+
+/*----------HEADERS----------*/
+
 .header-font {
     font-family: 'Amatic SC', cursive;
 }
 
-.border-black {
-    border: 1px solid black !important;
+.headers {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+   .headers {
+       font-size: 65px; 
+    }
 }
 
 /*----------HOME SECTION----------*/
