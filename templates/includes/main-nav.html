@@ -11,8 +11,8 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-                <a href="" class="dropdown-item ">Body Butters</a>
-                <a href="" class="dropdown-item ">Creams</a>
+                <a href="{% url 'products' %}?category=body_butters" class="dropdown-item ">Body Butters</a>
+                <a href="{% url 'products' %}?category=soaps" class="dropdown-item ">Soaps</a>
             </div>
         </li>
 
