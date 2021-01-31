@@ -17,9 +17,10 @@ As a shopper I want to be able to do the following below
 **Viewing and Navigating**
  
 1.  View a list of products so I can select items to purchase. 
-2.  View each product details like see the price, description, product rating, ingredients, and product range. 
-3.  Find deals, clearance, and special offers to take advantage of products I would like to buy.
-4.  View all my purchases at any time to avoid overspending.
+2.  View a specfic cat of products to quickly find products i'm interested in without having to search through all products.
+3.  View each product details like see the price, description, product rating, ingredients, and product range. 
+4.  Find deals, clearance, and special offers to take advantage of products I would like to buy.
+5.  View all my purchases at any time to avoid overspending.
  
 **Sorting and Searching** 
  
