@@ -28,18 +28,15 @@
                 <h4 class="mb-2 fw-bold">{{ product.name }}</h4>
                 <div class="row">
                     <div class="col-6">
-
                         {% if product.variation_set.all %}
-                        {% if product.variation_set.all|length >= 2  %}
-                        <p class="mb-0 text-start"> £{{ min }} - £{{ max }}</p>
+                            {% if product.variation_set.all|length >= 2  %}
+                                <p class="mb-0 text-start"> £{{ min }} - £{{ max }}</p>
+                            {% else %}
+                                <p class="mb-0 text-start">£{{ min }}</p>
+                            {% endif %}
                         {% else %}
-                        <p class="mb-0 text-start">£10</p>
+                            <p class="mb-0 text-start">item is out of stock</p>
                         {% endif %}
-                        {% else %}
-                        <p class="mb-0 text-start">item is out of stock</p>
-
-                        {% endif %}
-
                     </div>
                     <div class="col-6">
                         {% if product.rating %}

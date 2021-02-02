@@ -67,7 +67,15 @@
                                 <div class="card-footer pt-0 border-0">
                                     <div class="row">
                                         <div class="col-6 h-25">
-                                            <p class="mb-0 text-start">£</p>
+                                            {% if product.variation_set.all %}
+                                                {% if product.variation_set.all|length >= 2  %}
+                                                    <p class="mb-0 text-start">£ - £</p>
+                                                {% else %}
+                                                    <p class="mb-0 text-start">£</p>
+                                                {% endif %}
+                                            {% else %}
+                                                <p class="mb-0 text-start">Out of stock</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-6 h-25">
                                             {% if product.rating %}
