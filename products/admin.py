@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Variation
 
 # Register your models here.
 
@@ -9,7 +9,6 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'name',
         'category',
-        'price',
         'rating',
         'image',
     )
@@ -24,5 +23,15 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+class Variation_Admin(admin.ModelAdmin):
+    list_display = (
+        'product',
+        'size',
+        'price',
+        'stock',
+    )
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Variation, Variation_Admin)

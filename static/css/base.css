@@ -168,28 +168,45 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
-
-.btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
-
-.btt-link {
-    cursor: pointer;
-}
-
-.btn-outline-black {
+.designed-button {
     background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    color: #E19B74 !important; /* use important to override link colors for <a> elements */
+    border: 2px solid #E19B74;
+    height: 42px;
+    bottom: 10px;
 }
 
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
+.designed-button:hover,
+.designed-button:active,
+.designed-button:focus {
+    background: #E19B74;
     color: white !important;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid #E19B74;
+    border-radius: 4px;
+    margin: 15px 5px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color:#E19B74;
+    border-color: #E19B74;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #E19B74;
+}
+
+.radio-toolbar label:hover {
+  background-color: #E19B74;
 }
