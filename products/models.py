@@ -16,10 +16,9 @@ class Category(models.Model):
         return self.friendly_name
 
 
-class Product(models.Model):
+class Product_detail(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
     ingredients = models.TextField()
@@ -32,9 +31,10 @@ class Product(models.Model):
         return self.name
 
 
-class Variation(models.Model):
+class Product(models.Model):
     product = models.ForeignKey(
-        'Product', null=True, blank=True, on_delete=models.SET_NULL)
+        'Product_detail', null=True, blank=True, on_delete=models.SET_NULL)
+    sku = models.CharField(max_length=254, null=True, blank=True)
     size = models.CharField(max_length=25)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock = models.DecimalField(max_digits=6, decimal_places=0)

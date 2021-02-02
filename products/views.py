@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q, Min, Max
 from django.db.models.functions import Lower
 
-from .models import Product, Category, Variation
+from .models import Product_detail, Category, Product
 
 # Create your views here.
 
@@ -11,7 +11,7 @@ from .models import Product, Category, Variation
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product.objects.all()
+    products = Product_detail.objects.all()
     query = None
     categories = Category.objects.all()
     sort = None
@@ -64,7 +64,7 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    variables = Variation.objects.filter(product_id=product)
+    variables = Product.objects.filter(product_id=product)
     min = list(variables.aggregate(Min('price')).values())[0]
     max = list(variables.aggregate(Max('price')).values())[0]
 
