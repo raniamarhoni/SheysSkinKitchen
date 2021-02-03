@@ -63,7 +63,7 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product_detail, pk=product_id)
     variables = Product.objects.filter(product_id=product)
     min = list(variables.aggregate(Min('price')).values())[0]
     max = list(variables.aggregate(Max('price')).values())[0]

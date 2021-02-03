@@ -67,8 +67,8 @@
                                 <div class="card-footer pt-0 border-0">
                                     <div class="row">
                                         <div class="col-6 h-25">
-                                            {% if product.variation_set.all %}
-                                                {% if product.variation_set.all|length >= 2  %}
+                                            {% if product.product_set.all %}
+                                                {% if product.product_set.all|length >= 2  %}
                                                     <p class="mb-0 text-start">£ - £</p>
                                                 {% else %}
                                                     <p class="mb-0 text-start">£</p>

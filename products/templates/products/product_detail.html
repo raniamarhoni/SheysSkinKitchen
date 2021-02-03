@@ -28,8 +28,8 @@
                 <h4 class="mb-2 fw-bold">{{ product.name }}</h4>
                 <div class="row">
                     <div class="col-6">
-                        {% if product.variation_set.all %}
-                            {% if product.variation_set.all|length >= 2  %}
+                        {% if product.product_set.all %}
+                            {% if product.product_set.all|length >= 2  %}
                                 <p class="mb-0 text-start"> £{{ min }} - £{{ max }}</p>
                             {% else %}
                                 <p class="mb-0 text-start">£{{ min }}</p>
@@ -55,7 +55,7 @@
                 </div>
                 <p class="mt-3">{{ product.description }}</p>
 
-                {% if product.variation_set.all %}
+                {% if product.product_set.all %}
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -63,7 +63,7 @@
                             <p class="m-0 fw-bold">Quantity:</p>
 
                             <div class="radio-toolbar">
-                                {% for item in product.variation_set.all %}
+                                {% for item in product.product_set.all %}
                                 <input type="radio" id="{{ product.id }}" name="sizes" value="{{ variation.id }}">
                                 <label for="{{ variation.id }}">{{ item.size }}<br>£{{ item.price }}</label>
                                 {% endfor %}
