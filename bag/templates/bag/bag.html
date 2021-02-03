@@ -32,22 +32,22 @@
                     {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.product.product.image.url }}">
+                            <img class="img-fluid rounded" src="{{ item.product_image.url }}">
                         </td>
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ item.product.product.name }}</strong></p>
-                            <p class="my-0">{{ item.product.id }}</p>
-                            <p class="my-0">{{ item.product.size }}</p>
-                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                            <p class="my-0"><strong>{{ item.product_name }}</strong></p>
+                            <p class="my-0">{{ item_id }}</p>
+                            <p class="my-0">{{ item_size }}</p>
+                            <p class="my-0 small text-muted">SKU: {{ item_sku|upper }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ item.product.price }}</p>
+                            <p class="my-0">£{{ item.price }}</p>
                         </td>
                         <td class="py-3 w-25">
                             <p class="my-0">{{ item.quantity }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ item.product.price }}</p>
+                            <p class="my-0">£{{ item.price }}</p>
                         </td>
                     </tr>
                     {% endfor %} 
