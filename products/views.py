@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q, Min, Max
+from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product_detail, Category, Product
+from .models import Product, Category, Size
 
 # Create your views here.
 
@@ -11,7 +11,7 @@ from .models import Product_detail, Category, Product
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product_detail.objects.all()
+    products = Product.objects.all()
     query = None
     categories = Category.objects.all()
     sort = None
@@ -40,8 +40,8 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!")
+                messages.error(request,
+                               ("You didn't enter any search criteria!"))
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
@@ -63,15 +63,24 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
-    product = get_object_or_404(Product_detail, pk=product_id)
-    variables = Product.objects.filter(product_id=product)
-    min = list(variables.aggregate(Min('price')).values())[0]
-    max = list(variables.aggregate(Max('price')).values())[0]
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,
-        'min': min,
-        'max': max,
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def product_size(request, product_id, size_id):
+    """ A view to show individual product details """
+
+    product = get_object_or_404(Product, pk=product_id)
+    size = get_object_or_404(Size, pk=size_id)
+
+    context = {
+        'product': product,
+        'size': size,
+    }
+
+    return render(request, 'products/product_size.html', context)

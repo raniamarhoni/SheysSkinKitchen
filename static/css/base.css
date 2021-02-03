@@ -153,19 +153,9 @@ footer {
     }
 }
 
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-}
-
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
+    background: white !important;
+    color: #E19B74 !important;
 }
 
 .designed-button {
@@ -209,4 +199,10 @@ a.category-badge > span.badge:hover {
 
 .radio-toolbar label:hover {
   background-color: #E19B74;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
