@@ -46,8 +46,7 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
-
-    #Other
+    # Other
     'crispy_forms,'
 ]
 
@@ -83,7 +82,7 @@ TEMPLATES = [
                 'django.template.context'
                 'bag.contexts.bag_contents',
             ],
-            'builtins ': [
+             'builtins ': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
             ]
