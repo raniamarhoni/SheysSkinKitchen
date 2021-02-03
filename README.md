@@ -235,6 +235,10 @@ To go on the inspect section on google chrome I right clicked on the website and
 
 While testing the responsive design I found that the banner does not show on tablet or phone screens as it was behind the nav therefore I added padding to bring it down and made sure no padding was there when on large screens.  
 
+**item would not add to bag**
+
+When adding something to the bag the page was kept breaking and bringing up a 404 error. While investigating I noticed that when it was redirecting it did not have the product model connected as it needs to model’s to go back and therefore added it in for it to redirect probably.
+
 ## Deployment
 
 1.	As I was going to use Gitpod I used this [template](https://github.com/Code-Institute-Org/gitpod-full-template) to open a GitHub repository.
