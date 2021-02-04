@@ -63,11 +63,15 @@
                                     <a href="{% url 'product_size' product.id item.id %}">{{ item.size }}<br>£{{ item.price }}</a>
                                 {% endfor %}
                             </div>
-                
-
             </div>
         </div>
     </div>
 </div>
-
+{{ average }}
+ <div class="reviews">
+     {% for review in reviews %}
+        <p>{{ review.star}}</p>
+        <p>{{ review.review }}</p>
+     {% endfor %}
+ </div>
 {% endblock %}

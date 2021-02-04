@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 
-from .models import Product, Category, Size
+from .models import Product, Category, Size, Review
 
 # Create your views here.
 
@@ -64,9 +64,13 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product_id)
+    average = Review.objects.filter(product=product_id).aggregate(Avg('star'))
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'average': average,
     }
 
     return render(request, 'products/product_detail.html', context)
