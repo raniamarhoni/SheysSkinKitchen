@@ -25,7 +25,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['sheysskinkitchen.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
