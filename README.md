@@ -61,7 +61,7 @@ As a Store Owner I want to be able to do the following below
  
 **Admin and Store Management** 
  
-1.  Add a product to the store. 
+1.  Add a product to the store with different sizes and prices.
 2.  Edit and update a product e.g., product prices, descriptions, images, and other product criteria. 
 3.  Delete a product that is no longer on sale. 
  
