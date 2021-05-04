@@ -44,9 +44,9 @@ class Size(models.Model):
 class Review(models.Model):
     product = models.ForeignKey(
         'Product', null=True, on_delete=models.SET_NULL)
-    star = models.CharField(max_length=1)
+    star = models.IntegerField(null=True, blank=True)
     review = models.TextField()
     date_created = models.DateField()
 
     def __str__(self):
-        return self.star
+        return str(self.star)
