@@ -1,1 +1,1 @@
-web: gunicorn sheysskinkitchen.wsgi:application
+web: gunicorn sheyskinkitchen.wsgi:application
