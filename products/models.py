@@ -66,7 +66,7 @@ class Size(models.Model):
     stock = models.DecimalField(max_digits=6, decimal_places=0)
 
     def __str__(self):
-        return self.size
+        return self.product.name + ' - ' + self.size
 
 
 class Review(models.Model):
