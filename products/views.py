@@ -5,7 +5,7 @@ from django.db.models import Q, F, Avg, Min
 from django.db.models.functions import Lower
 
 from .models import Product, Category, Size, Review
-from .forms import ProductForm
+from .forms import ProductForm, SizeForm
 
 # Create your views here.
 
@@ -171,3 +171,34 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+@login_required
+def add_size(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = SizeForm(request.POST)
+        if form.is_valid():
+            a = form.save(commit=False)
+            a.product = product
+            a.save()
+            messages.success(request, 'Successfully added size!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request,
+                           ('Failed to update size. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = SizeForm(instance=product)
+        messages.info(request, f'You are adding a size to {product.name}')
+
+    template = 'products/add_size.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)

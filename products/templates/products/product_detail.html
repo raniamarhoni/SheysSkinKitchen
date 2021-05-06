@@ -50,7 +50,8 @@
                 <p class="my-2">{{ product.description }}</p>
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                        <a href="{% url 'edit_product' product.id %}">Edit Product</a> | 
+                        <a href="{% url 'add_size' product.id %}">Add Size</a> | 
                         <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                     </small>
                 {% endif %}
@@ -60,7 +61,13 @@
 
                             <div class="radio-toolbar">
                                 {% for item in product.size_set.all %}
-                                    <a class="d-inline-block size-btt p-2" href="{% url 'product_size' product.id item.id %}">{{ item.size }} <br> £{{ item.price }}</a>
+                                    <div class="product-size-section d-inline-block mr-1">
+                                        <a class="size-btt p-2 d-inline-block w-100 text-center" href="{% url 'product_size' product.id item.id %}">{{ item.size }} <br> £{{ item.price }}</a>
+                                        {% if request.user.is_superuser %}
+                                            <br><a href="">Edit</a> |
+                                            <a class="text-danger" href="">Delete</a>
+                                        {% endif %}
+                                    </div>
                                 {% endfor %}
                             </div> 
             </div>
