@@ -136,6 +136,12 @@ body {
     padding: 5px;
 }
 
+@media only screen and (min-width: 992px) {
+    #delivery-banner {
+        padding-top: 72px;
+    }
+}
+
 /*---------- FOOTER ----------*/
 
 footer {

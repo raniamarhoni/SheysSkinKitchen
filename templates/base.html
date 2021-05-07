@@ -6,7 +6,7 @@
 <head>
 
     {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
@@ -132,6 +132,7 @@
                 </ul>
             </div>
         </div>
+        </header>
 
         <header class="container-fluid fixed-top d-block d-lg-none">
             <div class="row bg-white">
@@ -147,12 +148,11 @@
         </header>
 
 
-        <div id="delivery-banner" class="row text-center p-lg-0">
+        <div id="delivery-banner" class="row text-center fixed-top">
             <div class="col banner">
                 <h5>Free delivery on orders over £{{ free_delivery_threshold }}!</h5>
             </div>
         </div>
-    </header>
 
     {% if messages %}
     <div class="message-container">
@@ -188,7 +188,7 @@
     </footer>
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}
