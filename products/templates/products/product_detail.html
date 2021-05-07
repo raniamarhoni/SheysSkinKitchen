@@ -81,10 +81,16 @@
 </div>
 
 <div class="row">
-    <div class="col-12 px-4 py-3">
+    <div class="col-12 px-4 py-3 text-center">
         <h5 class="text-center">Reviews</h5>
-        <h6 class="text-center fw-bold"><i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5</h6>
-        <a href="{% url 'add_review' product.id %}">Add Review</a>
+        <h6 class="text-center fw-bold">
+            {% if product.get_avg_rating == "No Rating" %}
+                {{ product.get_avg_rating }}
+            {% else %}
+                <i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5
+            {% endif %}
+        </h6>
+        <a href="{% url 'add_review' product.id %}" >Add Review</a>
         <hr class="w-75 mb-3 m-auto">
         {% for review in reviews %}
                 <p class="text-center"><i class="fas fa-star mr-1"></i>{{ review.star }} / 5 </p>

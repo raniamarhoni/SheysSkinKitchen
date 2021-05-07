@@ -43,6 +43,13 @@
                     {% endif %}
                 </div>
                 <p class="mt-3">{{ product.description }}</p>
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}">Edit Product</a> |
+                    <a href="{% url 'add_size' product.id %}">Add Size</a> |
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </small>
+                {% endif %}
 
 
                 <form class="form" action="{% url 'add_to_bag' product.id size.id %}" method="POST">
@@ -114,9 +121,16 @@
 </div>
 
 <div class="row">
-    <div class="col-12 px-4 py-3">
+    <div class="col-12 px-4 py-3 text-center">
         <h5 class="text-center">Reviews</h5>
-        <h6 class="text-center fw-bold"><i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5</h6>
+        <h6 class="text-center fw-bold">
+            {% if product.get_avg_rating == "No Rating" %}
+            {{ product.get_avg_rating }}
+            {% else %}
+            <i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5
+            {% endif %}
+        </h6>
+        <a href="{% url 'add_review' product.id %}">Add Review</a>
         <hr class="w-75 mb-3 m-auto">
         {% for review in reviews %}
         <p class="text-center"><i class="fas fa-star mr-1"></i>{{ review.star }} / 5 </p>

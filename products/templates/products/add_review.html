@@ -5,16 +5,16 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6 offset-lg-3">
                 <hr>
-                <h2 class="logo-font mb-4">Reviews</h2>
+                <h2 class="mb-4">Reviews</h2>
                 <h5 class="text-muted">Add a Review</h5>
                 <hr>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6 offset-lg-3">
                 <form method="POST" action="{% url 'add_review' product.id %}" class="form mb-2">
                     {% csrf_token %}
                     {% for field in form %}
@@ -24,15 +24,12 @@
                             {{ field | as_crispy_field }}
                         {% endif %}
                     {% endfor %}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Add Review</button>
+                    <div class="text-end pt-2">
+                        <a class="btn btn-outline-dark rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-dark rounded-0" type="submit">Add Review</button>
                     </div>
                 </form>
-            </div>
-            <div class="col-12 col-md-6">
-
-            </div>          
+            </div>      
         </div>
     </div>
 {% endblock %}
