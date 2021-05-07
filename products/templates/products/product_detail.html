@@ -32,11 +32,11 @@
                     </div>
                     <div class="col-6">
                         <p class="mb-0 text-end">
-                        {% if product.get_avg_rating == "No Rating" %}
+                            {% if product.get_avg_rating == "No Rating" %}
                             {{ product.get_avg_rating }}
-                        {% else %}
+                            {% else %}
                             <i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5
-                        {% endif %}
+                            {% endif %}
                         </p>
                     </div>
                     {% if product.category %}
@@ -49,27 +49,30 @@
                 </div>
                 <p class="my-2">{{ product.description }}</p>
                 {% if request.user.is_superuser %}
-                    <small class="ml-3">
-                        <a href="{% url 'edit_product' product.id %}">Edit Product</a> | 
-                        <a href="{% url 'add_size' product.id %}">Add Size</a> | 
-                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                    </small>
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}">Edit Product</a> |
+                    <a href="{% url 'add_size' product.id %}">Add Size</a> |
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </small>
                 {% endif %}
 
-                        <div class="col-12">
-                            <p class="m-0 fw-bold">Quantity:</p>
+                <div class="col-12">
+                    <p class="m-0 fw-bold">Quantity:</p>
 
-                            <div class="radio-toolbar">
-                                {% for item in product.size_set.all %}
-                                    <div class="product-size-section d-inline-block mr-1">
-                                        <a class="size-btt p-2 d-inline-block w-100 text-center" href="{% url 'product_size' product.id item.id %}">{{ item.size }} <br> £{{ item.price }}</a>
-                                        {% if request.user.is_superuser %}
-                                            <br><a href="{% url 'edit_size' product.id item.id %}">Edit</a> |
-                                            <a class="text-danger" href="{% url 'delete_size' product.id item.id %}">Delete</a>
-                                        {% endif %}
-                                    </div>
-                                {% endfor %}
-                            </div> 
+                    <div class="radio-toolbar">
+                        {% for item in product.size_set.all %}
+                        <div class="product-size-section d-inline-block mr-1">
+                            <a class="size-btt p-2 d-inline-block w-100 text-center"
+                                href="{% url 'product_size' product.id item.id %}">{{ item.size }} <br>
+                                £{{ item.price }}</a>
+                            {% if request.user.is_superuser %}
+                            <br><a href="{% url 'edit_size' product.id item.id %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_size' product.id item.id %}">Delete</a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -80,10 +83,10 @@
 
 <p class="text-center fw-bold">Reviews</p>
 {{ average }}
- <div class="reviews">
-     {% for review in reviews %}
-        <p>{{ review.star}}</p>
-        <p>{{ review.review }}</p>
-     {% endfor %}
- </div>
+<div class="reviews">
+    {% for review in reviews %}
+    <p>{{ review.star}}</p>
+    <p>{{ review.review }}</p>
+    {% endfor %}
+</div>
 {% endblock %}
