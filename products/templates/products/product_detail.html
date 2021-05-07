@@ -64,7 +64,7 @@
                                     <div class="product-size-section d-inline-block mr-1">
                                         <a class="size-btt p-2 d-inline-block w-100 text-center" href="{% url 'product_size' product.id item.id %}">{{ item.size }} <br> £{{ item.price }}</a>
                                         {% if request.user.is_superuser %}
-                                            <br><a href="">Edit</a> |
+                                            <br><a href="{% url 'edit_size' product.id item.id %}">Edit</a> |
                                             <a class="text-danger" href="">Delete</a>
                                         {% endif %}
                                     </div>

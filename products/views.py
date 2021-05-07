@@ -202,3 +202,37 @@ def add_size(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_size(request, product_id, size_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    size = get_object_or_404(Size, pk=size_id)
+    form = SizeForm(request.POST, request.FILES, instance=size)
+    if request.method == 'POST':
+        if form.is_valid():
+            a = form.save(commit=False)
+            a.product = product
+            a.save()
+            messages.success(request, 'Successfully edited size!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request,
+                           ('Failed to edit size. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = SizeForm(instance=size)
+        messages.info(request, f'You are editing size {size.size} for {product.name}')
+
+    template = 'products/edit_size.html'
+    context = {
+        'form': form,
+        'product': product,
+        'size': size,
+    }
+
+    return render(request, template, context)
