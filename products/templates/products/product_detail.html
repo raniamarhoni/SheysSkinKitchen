@@ -1,17 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="header-container">
-</div>
-{% endblock %}
-
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <div class="image-container mt-5 mb-2">
+            <div class="image-container">
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -24,7 +19,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="product-details-container mb-5 mt-md-5">
+            <div class="product-details-container ">
                 <h4 class="mb-2 fw-bold">{{ product.name }}</h4>
                 <div class="row">
                     <div class="col-6">
@@ -57,7 +52,7 @@
                 {% endif %}
 
                 <div class="col-12">
-                    <p class="m-0 fw-bold">Quantity:</p>
+                    <p class="m-0 fw-bold mt-1">Quantity:</p>
 
                     <div class="radio-toolbar">
                         {% for item in product.size_set.all %}
@@ -78,15 +73,26 @@
     </div>
 </div>
 
-<p class="m-0 fw-bold">Ingredients:</p>
-<p class="m-0">{{ product.ingredients }}</p>
-
-<p class="text-center fw-bold">Reviews</p>
-{{ average }}
-<div class="reviews">
-    {% for review in reviews %}
-    <p>{{ review.star}}</p>
-    <p>{{ review.review }}</p>
-    {% endfor %}
+<div class="row">
+    <div class="col-12 px-4 py-3">
+        <p class="m-0 fw-bold">Ingredients:</p>
+        <p class="m-0">{{ product.ingredients }}</p>
+    </div>
 </div>
+
+<div class="row">
+    <div class="col-12 px-4 py-3">
+        <h5 class="text-center">Reviews</h5>
+        <h6 class="text-center fw-bold"><i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5</h6>
+        <a href="{% url 'add_review' product.id %}">Add Review</a>
+        <hr class="w-75 mb-3 m-auto">
+        {% for review in reviews %}
+                <p class="text-center"><i class="fas fa-star mr-1"></i>{{ review.star }} / 5 </p>
+                <p class="text-center">{{ review.review }}</p>
+                <hr class="w-75 mb-3 m-auto">
+        {% endfor %}
+
+    </div>
+</div>
+
 {% endblock %}

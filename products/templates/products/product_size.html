@@ -1,17 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="header-container">
-</div>
-{% endblock %}
-
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <div class="image-container my-5">
+            <div class="image-container ">
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -24,18 +19,20 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="product-details-container mb-5 mt-md-5">
+            <div class="product-details-container">
                 <h4 class="mb-2 fw-bold">{{ product.name }}</h4>
                 <div class="row">
                     <div class="col-6">
                         <p class="mb-0 text-start"> £{{ size.price }}</p>
                     </div>
                     <div class="col-6">
-                        {% if product.rating %}
-                        <p class="mb-0 text-end"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</p>
-                        {% else %}
-                        <p class="mb-0 text-end">No Rating</p>
-                        {% endif %}
+                        <p class="mb-0 text-end">
+                            {% if product.get_avg_rating == "No Rating" %}
+                            {{ product.get_avg_rating }}
+                            {% else %}
+                            <i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5
+                            {% endif %}
+                        </p>
                     </div>
                     {% if product.category %}
                     <p class=" m-0">
@@ -56,15 +53,21 @@
 
 
                             {% for item in product.size_set.all %}
-                            <a
-                                href="{% url 'product_size' product.id item.id %}">{{ item.size }}<br>£{{ item.price }}</a>
-
+                            <div class="product-size-section d-inline-block mr-1 mb-2">
+                                <a class="size-btt p-2 d-inline-block w-100 text-center"
+                                    href="{% url 'product_size' product.id item.id %}">{{ item.size }} <br>
+                                    £{{ item.price }}</a>
+                                {% if request.user.is_superuser %}
+                                <br><a href="{% url 'edit_size' product.id item.id %}">Edit</a> |
+                                <a class="text-danger" href="{% url 'delete_size' product.id item.id %}">Delete</a>
+                                {% endif %}
+                            </div>
                             {% endfor %}
 
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-black rounded-0"
-                                        data-item_id="{{ size.id }}" id="decrement-qty_{{ size.id }}">
+                                    <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ size.id }}"
+                                        id="decrement-qty_{{ size.id }}">
                                         <span class="icon">
                                             <i class="fas fa-minus"></i>
                                         </span>
@@ -73,8 +76,8 @@
                                 <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
                                     max="99" data-item_id="{{ size.id }}" id="id_qty_{{ size.id }}">
                                 <div class="input-group-append">
-                                    <button class="increment-qty btn btn-black rounded-0"
-                                        data-item_id="{{ size.id }}" id="increment-qty_{{ size.id }}">
+                                    <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ size.id }}"
+                                        id="increment-qty_{{ size.id }}">
                                         <span class="icon">
                                             <i class="fas fa-plus"></i>
                                         </span>
@@ -82,7 +85,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div class="col-12 text-end">
                                 <a href="{% url 'products' %}" class="btn designed-button rounded-0 mt-2">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
@@ -100,6 +103,27 @@
 
             </div>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 px-4 py-3">
+        <p class="m-0 fw-bold">Ingredients:</p>
+        <p class="m-0">{{ product.ingredients }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 px-4 py-3">
+        <h5 class="text-center">Reviews</h5>
+        <h6 class="text-center fw-bold"><i class="fas fa-star mr-1"></i>{{ product.get_avg_rating }} / 5</h6>
+        <hr class="w-75 mb-3 m-auto">
+        {% for review in reviews %}
+        <p class="text-center"><i class="fas fa-star mr-1"></i>{{ review.star }} / 5 </p>
+        <p class="text-center">{{ review.review }}</p>
+        <hr class="w-75 mb-3 m-auto">
+        {% endfor %}
+
     </div>
 </div>
 

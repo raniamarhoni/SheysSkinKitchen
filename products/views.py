@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q, F, Avg, Min
 from django.db.models.functions import Lower
+from datetime import datetime
 
 from .models import Product, Category, Size, Review
-from .forms import ProductForm, SizeForm
+from .forms import ProductForm, SizeForm, ReviewForm
 
 # Create your views here.
 
@@ -76,12 +77,10 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
-    average = Review.objects.filter(product=product_id).aggregate(Avg('star'))
 
     context = {
         'product': product,
         'reviews': reviews,
-        'average': average,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -92,10 +91,12 @@ def product_size(request, product_id, size_id):
 
     product = get_object_or_404(Product, pk=product_id)
     size = get_object_or_404(Size, pk=size_id)
+    reviews = Review.objects.filter(product=product_id)
 
     context = {
         'product': product,
         'size': size,
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_size.html', context)
@@ -249,3 +250,31 @@ def delete_size(request, product_id, size_id):
     size.delete()
     messages.success(request, 'Size deleted!')
     return redirect(reverse('product_detail', args=[product.id]))
+
+
+def add_review(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            a = form.save(commit=False)
+            a.product = product
+            a.date_created = default=datetime.now()
+            a.save()
+            messages.success(request, 'Successfully added review!')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request,
+                           ('Failed to update review. '
+                            'Please ensure the form is valid.'))
+    else:
+        form = ReviewForm(instance=product)
+        messages.info(request, f'You are adding a review to {product.name}')
+
+    template = 'products/add_review.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)

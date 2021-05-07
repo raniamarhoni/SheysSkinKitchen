@@ -2,6 +2,7 @@
 
 html {
     height: 100%;
+    width:100%
 }
 
 body {
@@ -144,8 +145,21 @@ body {
 
 /*---------- FOOTER ----------*/
 
-footer {
-    background: #E19B74;
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  background: #E19B74;
 }
 
 /*---------- PRODUCTS ----------*/

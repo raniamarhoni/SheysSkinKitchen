@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="header-container">
-</div>
-{% endblock %}
-
 {% block content %}
 
 <div class="products-section">
@@ -18,7 +13,6 @@
         {% endfor %}
     </div>
     <hr class="w-75 mb-3 m-auto">
-
 
     <div class="container-fluid">
         <div class="row">
@@ -81,7 +75,7 @@
                                 {% endif %}
 
                             </div>
-                            <div class="card-body py-1 px-0">
+                            <div class="card-body py-1 px-0 bg-white">
                                 <p class="mb-0 fw-bold">{{ product.name }}</p>
                             </div>
                             <div class="card-footer p-0 border-0">
