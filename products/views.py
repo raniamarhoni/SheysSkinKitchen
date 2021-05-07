@@ -236,3 +236,16 @@ def edit_size(request, product_id, size_id):
     }
 
     return render(request, template, context)
+
+@login_required
+def delete_size(request, product_id, size_id):
+    """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    size = get_object_or_404(Size, pk=size_id)
+    size.delete()
+    messages.success(request, 'Size deleted!')
+    return redirect(reverse('product_detail', args=[product.id]))
