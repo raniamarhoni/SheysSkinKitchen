@@ -60,8 +60,8 @@
 
 
                             {% for item in product.size_set.all %}
-                            <div class="product-size-section d-inline-block mr-1 mb-2">
-                                <a class="size-btt p-2 d-inline-block w-100 text-center"
+                            <div class="product-size-section d-inline-block mx-1 mb-2 text-center">
+                                <a class="size-btt p-2 d-inline-block text-center"
                                     href="{% url 'product_size' product.id item.id %}">{{ item.size }} <br>
                                     £{{ item.price }}</a>
                                 {% if request.user.is_superuser %}
@@ -114,7 +114,7 @@
 </div>
 
 <div class="row">
-    <div class="col-12 px-4 py-3">
+    <div class="col-12 px-4 py-3 text-center">
         <p class="m-0 fw-bold">Ingredients:</p>
         <p class="m-0">{{ product.ingredients }}</p>
     </div>

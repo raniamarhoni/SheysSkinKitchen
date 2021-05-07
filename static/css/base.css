@@ -157,9 +157,8 @@ body {
 /*---------- PRODUCTS ----------*/
 
 .product-image {
-    background: no-repeat center center fixed;
-    background-size: cover;
     height: 300px;
+    object-fit: cover;
 }
 
 .size-btt {
