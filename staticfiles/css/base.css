@@ -1,0 +1,404 @@
+/*----------HTML & BODY----------*/
+
+html {
+    height: 100%;
+    width:100%
+}
+
+body {
+    background: white;
+    color: black;
+    font-family: 'Abel', sans-serif;
+}
+
+/*----------COMMON CSS----------*/
+
+.center {
+    text-align:center;
+    width: fit-content;
+    margin: auto;
+}
+
+.extra-button-margin {
+    margin: 20px auto;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+/*----------HEADERS----------*/
+
+.header-font {
+    font-family: 'Amatic SC', cursive;
+}
+
+.headers {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+   .headers {
+       font-size: 65px; 
+    }
+}
+
+/*----------HOME SECTION----------*/
+
+.home-section {
+    background: url('/media/home.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.top-cover {
+    background: rgba(255, 255, 255, 0.3)
+}
+
+.home-logo {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.home-description {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.shop-now-button {
+    background: white;
+    color: #E19B74;
+    padding: 10px 30px;
+    border: #E19B74 solid 3px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus {
+    background: #E19B74;
+    color: white;
+    border: white solid 3px;
+
+}
+
+@media only screen and (min-width: 768px) {
+   .home-logo {
+       font-size: 80px; 
+    }
+
+    .home-description {
+        font-size: 20px;
+    }
+
+    .shop-now-button {
+       font-size: 25px; 
+    }
+}
+
+@media only screen and (min-width: 992px) {
+   .home-logo {
+       font-size: 100px; 
+    }
+
+    .home-description {
+        font-size: 30px;
+    }
+
+    .shop-now-button {
+       font-size: 35px; 
+    }
+}
+
+/*---------- HEADER, NAV & BANNER----------*/
+
+.nav-logo {
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: black;
+}
+
+#delivery-banner {
+    padding-top: 80px;
+}
+
+.banner{
+    background: black;
+    color: white;
+    padding: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+    #delivery-banner {
+        padding-top: 72px;
+    }
+}
+
+/*---------- FOOTER ----------*/
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+    bottom: 0;
+    width: 100%;
+    background: #E19B74;
+}
+
+/*---------- PRODUCTS ----------*/
+
+.product-image {
+    height: 300px;
+    object-fit: cover;
+}
+
+.size-btt {
+    background-color: white;
+    color: black;
+    border: #E19B74 3px solid;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.size-btt-clicked {
+    background-color: #E19B74;
+    color: black;
+    border: #E19B74 3px solid;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/* -------------------------------- Media Queries */
+.header-container {
+    margin-top: 122px;
+}
+
+@media (min-width: 992px) {
+    .header-container {
+        padding-top: 0px;
+    }
+}
+
+a.category-badge > span.badge:hover {
+    background: white !important;
+    color: #E19B74 !important;
+}
+
+.designed-button {
+    background: white;
+    color: #E19B74 !important; /* use important to override link colors for <a> elements */
+    border: 2px solid #E19B74;
+    height: 42px;
+    bottom: 10px;
+}
+
+.designed-button:hover,
+.designed-button:active,
+.designed-button:focus {
+    background: #E19B74;
+    color: white !important;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid #E19B74;
+    border-radius: 4px;
+    margin: 15px 5px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color:#E19B74;
+    border-color: #E19B74;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #E19B74;
+}
+
+.radio-toolbar label:hover {
+  background-color: #E19B74;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 1px solid #000;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+	color: #17a2b8; /* text-info */
+}
+
+/* Product Form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+}
+
+.form-check .form-check-input {
+    float: none;
+}
