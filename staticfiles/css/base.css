@@ -2,13 +2,17 @@
 
 html {
     height: 100%;
-    width:100%
+    width:100%;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body {
     background: white;
     color: black;
     font-family: 'Abel', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 /*----------COMMON CSS----------*/
@@ -117,6 +121,11 @@ body {
 
 /*---------- HEADER, NAV & BANNER----------*/
 
+.navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .nav-logo {
     font-weight: bold;
     color: black;
@@ -135,6 +144,9 @@ body {
     background: black;
     color: white;
     padding: 5px;
+    position: fixed;
+    width: 100vw;
+    left: 0;
 }
 
 @media only screen and (min-width: 992px) {
@@ -149,9 +161,11 @@ body {
 }
 
 #footer {
-    bottom: 0;
     width: 100%;
     background: #E19B74;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
 }
 
 /*---------- PRODUCTS ----------*/

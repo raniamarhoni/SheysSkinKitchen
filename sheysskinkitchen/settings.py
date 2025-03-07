@@ -10,20 +10,26 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import dj_database_url
 from pathlib import Path
-from sheysskinkitchen import env  # This ensures env.py runs
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Ensure env.py is loaded
+env_path = os.path.join(BASE_DIR, "env.py")
+if os.path.exists(env_path):
+    import env  # ✅ Load environment variables
+else:
+    print("⚠️ WARNING: env.py not found! Make sure it exists in the project root.")
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.getenv("SECRET_KEY"),
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = ['localhost', 'sheyskinkitchen.herokuapp.com', '127.0.0.1', '.gitpod.io']
 
@@ -165,42 +171,42 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# Get Static and Media Settings from env.py
+STATIC_URL = os.getenv("STATIC_URL", "/static/")
+STATIC_ROOT = os.getenv("STATIC_ROOT", os.path.join(BASE_DIR, "staticfiles"))
+MEDIA_URL = os.getenv("MEDIA_URL", "/media/")
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", os.path.join(BASE_DIR, "media"))
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Ensure Django can find the static files directory
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-if 'USE_AWS' in os.environ:
-    # Cache control
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000',
-    }
+USE_AWS = os.getenv("USE_AWS", "False").lower() == "true"
 
-    # Bucket Config
-    AWS_STORAGE_BUCKET_NAME = 'sheysskinkitchen'
-    AWS_S3_REGION_NAME = 'eu-west-2'
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+if USE_AWS:
+    AWS_STORAGE_BUCKET_NAME = "sheysskinkitchen"
+    AWS_S3_REGION_NAME = "eu-west-2"
+    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "")
+    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "")
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
-    # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
+    # AWS Storage Configuration
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
 
-    # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    # Override static and media URLs for AWS
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+
 else:
-    # 🚨 Use local static files
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+    # 🚨 Force Django to use local static files
+    STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+    DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+    STATIC_URL = "/static/"
+    MEDIA_URL = "/media/"
 
-    STATIC_URL = '/static/'
-    MEDIA_URL = '/media/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Stripe
 FREE_DELIVERY_THRESHOLD = 50
